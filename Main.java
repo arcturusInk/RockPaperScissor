@@ -56,9 +56,7 @@ public class Game {
         displayGameIntroduction();
         String userInput = askForInput();
         while(!userInput.equals("Exit")){
-            if(userInput.equals("Exit")){
-                System.exit(0);
-            }else if(userInput.equals("Rock") || userInput.equals("Paper") || userInput.equals("Scissor")){
+            if(userInput.equals("Rock") || userInput.equals("Paper") || userInput.equals("Scissor")){
                 String comInput = pickAnOption(choices);
                 determineGamePlay(userInput, comInput);
             }else{
