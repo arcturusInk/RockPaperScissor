@@ -6,9 +6,9 @@ public class Game {
 
     //Game Introduction
     static void displayGameIntroduction(){
-        System.out.println("Lets play a Rock, Paper, or Scissor Game!");
-        System.out.println("Please enter either 'Rock', 'Paper', or 'Scissor'!");
-        System.out.println("Or type 'Exit' to close the game.");
+        System.out.println("Lets play an endless game of Rock, Paper, or Scissor!");
+        System.out.println("Only type 'Exit' to close the game.");
+        System.out.println("Now please enter either 'Rock', 'Paper', or 'Scissor' to begin playing the game!");
     }
 
     //pick a random choice from the array
@@ -55,13 +55,16 @@ public class Game {
 
         displayGameIntroduction();
         String userInput = askForInput();
-        if(userInput.equals("Exit")){
-            System.exit(0);
-        }else if(userInput.equals("Rock") || userInput.equals("Paper") || userInput.equals("Scissor")){
-            String comInput = pickAnOption(choices);
-            determineGamePlay(userInput, comInput);
-        }else{
-            System.out.println("Please enter either 'Rock', 'Paper', or 'Scissor' as a choice!");
+        while(!userInput.equals("Exit")){
+            if(userInput.equals("Exit")){
+                System.exit(0);
+            }else if(userInput.equals("Rock") || userInput.equals("Paper") || userInput.equals("Scissor")){
+                String comInput = pickAnOption(choices);
+                determineGamePlay(userInput, comInput);
+            }else{
+                System.out.println("Please enter either 'Rock', 'Paper', or 'Scissor' as a choice!");
+            }
+            userInput = askForInput();
         }
     }
 }
